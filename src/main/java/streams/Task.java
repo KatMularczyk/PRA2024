@@ -24,8 +24,8 @@ public class Task {
     }
 
     public static List<String> toUpperCase(List<String> collection) {
-       // ToDo
-        return null;
+        return collection.stream().map(tekst->tekst.toUpperCase()).collect(Collectors.toList());
+        //return null; <- done
     }
 
     public static List<String> transformOldJava(List<String> collection) {
@@ -39,8 +39,8 @@ public class Task {
     }
 
     public static List<String> transform(List<String> collection) {
-        // ToDo
-        return null;
+        return collection.stream().filter(tekst->tekst.length()<4).collect(Collectors.toList());
+        //return null; <- done
     }
 
     /**
@@ -56,8 +56,8 @@ public class Task {
     }
 
     public static Map<String,Human> createMap(List<Human> collection) {
-        // ToDo
-        return null;
+        return collection.stream().collect(Collectors.toMap(element -> element.getName(), element -> element));
+        //return null; -> done
     }
 
 
@@ -72,7 +72,7 @@ public class Task {
     }
 
     public static Human getOldestHuman(List<Human> people) {
-        // ToDo
+        return people.stream().sorted(Comparator.comparing(Human::getAge).reversed());//błąd, jak zmienić na human?
         return null;
     }
 

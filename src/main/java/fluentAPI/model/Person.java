@@ -27,12 +27,13 @@ public class Person implements IPerson {
     @Override
     public IPerson sayHelloToFriends() {
         // ToDo
+        friends.forEach(friend -> System.out.println("Hello " +friend.name));
         return this;
     }
 
     @Override
     public IPerson processFriends(Function<List<Person>, List<Person>> processor) {
-        processor.apply(this.friends);
+        processor.apply(this.friends);//lamba! zastosuj funkcje procesor na obiektach friends obiektu this
         return this;
     }
 
